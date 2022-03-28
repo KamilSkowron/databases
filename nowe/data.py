@@ -67,14 +67,24 @@ data_df_2015['weekday'].unique()            # 0,1,2,3,4,5,6
 data_df_2016['weekday'].unique()            # 1,2,3
 
 
-#%% 
-plt.scatter(data_df["Timestamp"],data_df["Subflow Bwd Bytes"])
+#%% Total Bwd packets
+subflowBwdBytes_df = data_df_2015[["Timestamp","Total Bwd packets"]]
+ax1 = subflowBwdBytes_df.plot.scatter(x = 'Timestamp', y = 'Total Bwd packets')
+
+
+#%% Total Fwd Packet
+subflowFwdBytes_df = data_df_2015[["Timestamp","Total Fwd Packet"]]
+ax2 = subflowFwdBytes_df.plot.scatter(x = 'Timestamp', y = 'Total Fwd Packet')
 
 
 
 
-#%%
-pd.set_option('display.max_rows',None)
+
+
+
+
+
+
 
 
 
